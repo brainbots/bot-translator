@@ -2,7 +2,7 @@ from bots.abstract_bot import AbstractBot
 from bots.action import Action
 import settings
 from translate import Translator
-import bots.data.translator.lang as data
+import .lang as data
 
 class TranslationBot(AbstractBot):
     def __init__(self, id):
