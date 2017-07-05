@@ -1,4 +1,4 @@
-from .abstract_bot import AbstractBot
+from bots.abstract_bot import AbstractBot
 from bots.action import Action
 import settings
 from translate import Translator
