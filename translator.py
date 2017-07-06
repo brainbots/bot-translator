@@ -2,7 +2,7 @@ from bots.abstract_bot import AbstractBot
 from bots.action import Action
 import settings
 from translate import Translator
-import .lang as data
+from .lang import LANG_PAIR
 
 class TranslationBot(AbstractBot):
     def __init__(self, id):
@@ -46,8 +46,8 @@ class TranslationBot(AbstractBot):
         return False
 
     def execute(self):
-        to_code = data.LANG_PAIR[self.attr['lang-to']]
-        from_code = data.LANG_PAIR[self.attr['lang-from']]
+        to_code = LANG_PAIR[self.attr['lang-to']]
+        from_code = LANG_PAIR[self.attr['lang-from']]
         translator= Translator(to_lang=to_code, from_lang=from_code)
         translation = translator.translate(self.attr['text'])
         self.clear()
